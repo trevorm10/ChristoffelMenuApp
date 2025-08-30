@@ -20,20 +20,20 @@ export default function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
   const addMenuItem = (item: MenuItem) => {
-    setMenuItems(prev => [...prev, item]);
+    setMenuItems((prev) => [...prev, item]);
   };
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home">
-          {props => <HomeScreen {...props} menuItems={menuItems} addMenuItem={addMenuItem} />}
+          {(props) => <HomeScreen {...props} menuItems={menuItems} addMenuItem={addMenuItem} />}
         </Stack.Screen>
         <Stack.Screen name="AddItem">
-          {props => <AddItemScreen {...props} addMenuItem={addMenuItem} />}
+          {(props) => <AddItemScreen {...props} addMenuItem={addMenuItem} />}
         </Stack.Screen>
         <Stack.Screen name="GuestFilter">
-          {props => <GuestFilterScreen {...props} menuItems={menuItems} />}
+          {(props) => <GuestFilterScreen {...props} menuItems={menuItems} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
